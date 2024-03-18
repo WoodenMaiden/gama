@@ -43,6 +43,37 @@
 			<id>local-dev</id>
 		</profile>
 
+		<profile>
+			<id>spotbugs</id>
+			<build>
+			    <pluginManagement>
+					<plugins>
+						<plugin>
+						<groupId>com.worksap.tools</groupId>
+						<artifactId>incremental-analysis-maven-plugin</artifactId>
+						<version>1.1.0</version>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+				<plugins>
+				    <plugin>
+						<groupId>com.github.spotbugs</groupId>
+						<artifactId>spotbugs-maven-plugin</artifactId>
+						<version>4.0.0</version>
+						<configuration>
+							<xmlOutput>true</xmlOutput>
+							<failOnError>false</failOnError>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>com.worksap.tools</groupId>
+						<artifactId>incremental-analysis-maven-plugin</artifactId>
+						<version>1.1.0</version>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
 		<!-- This profile is used to upload the repo -->
 		<profile>
 			<id>p2Repo</id>
